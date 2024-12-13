@@ -17,7 +17,7 @@ ASTnode* createNodeString(char* name,char* value)
     ASTnode *node ;
     node = malloc(sizeof(*node)) ;
     strcpy(node->name,name) ;
-    strcpy(node->value,value) ;
+    strcpy(node->data.value,value) ;
     node->child = NULL ;
     node->next = NULL ;
     node->lineno = yylineno ;
@@ -29,7 +29,19 @@ ASTnode* createNodeInt(char* name,int int_val)
     ASTnode *node ;
     node = malloc(sizeof(*node)) ;
     strcpy(node->name,name) ;
-    node->int_val = int_val ;
+    node->data.int_val = int_val ;
+    node->child = NULL ;
+    node->next = NULL ;
+    node->lineno = yylineno ;
+    return node ; 
+}
+
+ASTnode* createNodeFloat(char* name,float float_val)
+{
+    ASTnode *node ;
+    node = malloc(sizeof(*node)) ;
+    strcpy(node->name,name) ;
+    node->data.float_val = float_val ;
     node->child = NULL ;
     node->next = NULL ;
     node->lineno = yylineno ;
@@ -64,13 +76,13 @@ void printTree(ASTnode* root,int count)
             || strcmp(root->name,"INTCONST") == 0
             || strcmp(root->name,"ID") == 0)
         {
-            if(strcmp(root->child,"INTCONST") == 0)
+            if(strcmp(root->child->name,"INTCONST") == 0)
             {
-                printf("%s: %d\n",root->name,root->int_val) ;
+                printf("%s: %d\n",root->name,root->data.int_val) ;
             }
             else
             {
-                printf("%s: %s\n",root->name,root->value) ;
+                printf("%s: %s\n",root->name,root->data.value) ;
             }
         }
         else

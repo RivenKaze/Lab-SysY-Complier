@@ -10,8 +10,6 @@
 %}
 
 %union{
-    int INTNUM;
-    int FLOATNUM;
     ASTnode* node ;
 };
 
@@ -123,7 +121,7 @@ ConstDecl_R     :ConstDecl_R COMMA ConstDef {$$=createNodeOp("ConstDecl_R");addC
 
 
 
-ConstDef        :ID VecDef_R EQ ConstInitVal {$$=createNodeOp("ConstDef");addChild($$,$4);addChild($$,$3);addChild($$,$2);addChild($$,$1);}
+ConstDef        :ID VecDef_R ASSIGN ConstInitVal {$$=createNodeOp("ConstDef");addChild($$,$4);addChild($$,$3);addChild($$,$2);addChild($$,$1);}
                 ;
 
 VecDef_R        :VecDef_R LS ConstExp RS {$$=createNodeOp("VecDef_R");addChild($$,$4);addChild($$,$3);addChild($$,$2);addChild($$,$1);}
@@ -163,9 +161,9 @@ FuncDef         :Type ID LP RP Block {$$=createNodeOp("FuncDef");addChild($$,$5)
                 |Type ID LP FuncFParams RP Block {$$=createNodeOp("FuncDef");addChild($$,$6);addChild($$,$5);addChild($$,$4);addChild($$,$3);addChild($$,$2);addChild($$,$1);}
                 ;
 
-Type            :VOID {$$=createNodeOp("Type");addChild($$,$1);}
-                |INT {$$=createNodeOp("Type");addChild($$,$1);}
-                |FLOAT {$$=createNodeOp("Type");addChild($$,$1);}
+Type            :VOID {$$=createNodeOp("VOID_Type");addChild($$,$1);}
+                |INT {$$=createNodeOp("INT_Type");addChild($$,$1);}
+                |FLOAT {$$=createNodeOp("FLOAT_Type");addChild($$,$1);}
                 ;
 
 FuncFParams     :FuncFParam FuncFParam_R {$$=createNodeOp("FuncFParams");addChild($$,$2);addChild($$,$1);}
