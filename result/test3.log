@@ -1,43 +1,75 @@
-27
-38
-16
-25
-38
-4
-26
-38
-17
-20
-21
-25
-38
-16
-17
-20
-38
-16
-37
-4
-34
-17
-10
-33
-35
-10
-21
 CompUnit(1)
  CompUnit(1)
   FuncDef(1)
    VOID_Type(1)
     VOID
-   VOID
-  VOID_Type(1)
-   VOID
-  VOID
- FuncDef(1)
-  VOID_Type(1)
-   VOID
-  VOID
- VOID_Type(1)
-  VOID
- VOID
+   IDENT
+   LP
+   FuncFParams(1)
+    FuncFParam(1)
+     INT_Type(1)
+      INT
+     IDENT
+    FuncFParam_R(1)
+     FuncFParam_R
+     COMMA
+     FuncFParam(1)
+      FLOAT_Type(1)
+       FLOAT
+      IDENT
+   RP
+   Block(1)
+    LB
+    BlockItem_R
+    RB
+ FuncDef(5)
+  INT_Type(5)
+   INT
+  IDENT
+  LP
+  RP
+  Block(5)
+   LB
+   BlockItem_R(5)
+    BlockItem_R(5)
+     BlockItem_R
+     BlockItem(6)
+      Stmt(6)
+       Exp(6)
+        AddExp(6)
+         MulExp(6)
+          UnaryExp(6)
+           IDENT
+           LP
+           FuncRParams(6)
+            Exp(6)
+             AddExp(6)
+              MulExp(6)
+               UnaryExp(6)
+                PrimaryExp(6)
+                 NUMBER(6)
+                  DECIMAL_CONST
+            Exp_R(6)
+             Exp_R
+             COMMA
+             Exp(6)
+              AddExp(6)
+               MulExp(6)
+                UnaryExp(6)
+                 PrimaryExp(6)
+                  NUMBER(6)
+                   FLOAT
+           RP
+       SEMICOLON
+    BlockItem(7)
+     Stmt(7)
+      RETURN
+      Exp(7)
+       AddExp(7)
+        MulExp(7)
+         UnaryExp(7)
+          PrimaryExp(7)
+           NUMBER(7)
+            DECIMAL_CONST
+      SEMICOLON
+   RB

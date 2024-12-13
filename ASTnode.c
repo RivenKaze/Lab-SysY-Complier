@@ -101,7 +101,7 @@ void printTree(ASTnode* root,int count)
         while(nxt != NULL)
         {
             printTree(nxt,count+1) ;
-            nxt = nxt->child ;
+            nxt = nxt->next ;
         }
     }
     return ;

@@ -1,71 +1,187 @@
-27
-38
-16
-25
-38
-4
-26
-38
-17
-20
-21
-25
-38
-16
-17
-20
-25
-38
-9
-37
-4
-38
-9
-12
-38
-10
-26
-38
-9
-34
-4
-38
-9
-38
-13
-34
-10
-38
-16
-38
-4
-38
-17
-10
-38
-16
-38
-4
-38
-17
-10
-33
-35
-10
-21
 CompUnit(1)
  CompUnit(1)
   FuncDef(1)
    VOID_Type(1)
     VOID
-   VOID
-  VOID_Type(1)
-   VOID
-  VOID
- FuncDef(1)
-  VOID_Type(1)
-   VOID
-  VOID
- VOID_Type(1)
-  VOID
- VOID
+   IDENT
+   LP
+   FuncFParams(1)
+    FuncFParam(1)
+     INT_Type(1)
+      INT
+     IDENT
+    FuncFParam_R(1)
+     FuncFParam_R
+     COMMA
+     FuncFParam(1)
+      FLOAT_Type(1)
+       FLOAT
+      IDENT
+   RP
+   Block(1)
+    LB
+    BlockItem_R
+    RB
+ FuncDef(5)
+  INT_Type(5)
+   INT
+  IDENT
+  LP
+  RP
+  Block(5)
+   LB
+   BlockItem_R(5)
+    BlockItem_R(5)
+     BlockItem_R(5)
+      BlockItem_R(5)
+       BlockItem_R(5)
+        BlockItem_R
+        BlockItem(6)
+         Decl(6)
+          VarDecl(6)
+           INT_Type(6)
+            INT
+           VarDef(6)
+            IDENT
+            VecDef_R
+            ASSIGN
+            InitVal(6)
+             Exp(6)
+              AddExp(6)
+               MulExp(6)
+                UnaryExp(6)
+                 PrimaryExp(6)
+                  NUMBER(6)
+                   DECIMAL_CONST
+           VarDef_R(6)
+            VarDef_R
+            COMMA
+            VarDef(6)
+             IDENT
+             VecDef_R
+             ASSIGN
+             InitVal(6)
+              Exp(6)
+               AddExp(6)
+                MulExp(6)
+                 UnaryExp(6)
+                  UnaryOp(6)
+                   MINUS
+                  UnaryExp(6)
+                   PrimaryExp(6)
+                    LVal(6)
+                     IDENT
+                     Vec_R
+           SEMICOLON
+       BlockItem(7)
+        Decl(7)
+         VarDecl(7)
+          FLOAT_Type(7)
+           FLOAT
+          VarDef(7)
+           IDENT
+           VecDef_R
+           ASSIGN
+           InitVal(7)
+            Exp(7)
+             AddExp(7)
+              MulExp(7)
+               UnaryExp(7)
+                PrimaryExp(7)
+                 NUMBER(7)
+                  FLOAT
+          VarDef_R(7)
+           VarDef_R
+           COMMA
+           VarDef(7)
+            IDENT
+            VecDef_R
+            ASSIGN
+            InitVal(7)
+             Exp(7)
+              AddExp(7)
+               MulExp(7)
+                MulExp(7)
+                 UnaryExp(7)
+                  PrimaryExp(7)
+                   LVal(7)
+                    IDENT
+                    Vec_R
+                MULT
+                UnaryExp(7)
+                 PrimaryExp(7)
+                  NUMBER(7)
+                   FLOAT
+          SEMICOLON
+      BlockItem(8)
+       Stmt(8)
+        Exp(8)
+         AddExp(8)
+          MulExp(8)
+           UnaryExp(8)
+            IDENT
+            LP
+            FuncRParams(8)
+             Exp(8)
+              AddExp(8)
+               MulExp(8)
+                UnaryExp(8)
+                 PrimaryExp(8)
+                  LVal(8)
+                   IDENT
+                   Vec_R
+             Exp_R(8)
+              Exp_R
+              COMMA
+              Exp(8)
+               AddExp(8)
+                MulExp(8)
+                 UnaryExp(8)
+                  PrimaryExp(8)
+                   LVal(8)
+                    IDENT
+                    Vec_R
+            RP
+        SEMICOLON
+     BlockItem(9)
+      Stmt(9)
+       Exp(9)
+        AddExp(9)
+         MulExp(9)
+          UnaryExp(9)
+           IDENT
+           LP
+           FuncRParams(9)
+            Exp(9)
+             AddExp(9)
+              MulExp(9)
+               UnaryExp(9)
+                PrimaryExp(9)
+                 LVal(9)
+                  IDENT
+                  Vec_R
+            Exp_R(9)
+             Exp_R
+             COMMA
+             Exp(9)
+              AddExp(9)
+               MulExp(9)
+                UnaryExp(9)
+                 PrimaryExp(9)
+                  LVal(9)
+                   IDENT
+                   Vec_R
+           RP
+       SEMICOLON
+    BlockItem(10)
+     Stmt(10)
+      RETURN
+      Exp(10)
+       AddExp(10)
+        MulExp(10)
+         UnaryExp(10)
+          PrimaryExp(10)
+           NUMBER(10)
+            DECIMAL_CONST
+      SEMICOLON
+   RB

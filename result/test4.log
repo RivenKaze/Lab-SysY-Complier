@@ -1,59 +1,138 @@
-27
-38
-16
-25
-38
-17
-20
-21
-25
-38
-16
-17
-20
-25
-38
-9
-37
-10
-28
-16
-38
-6
-37
-17
-20
-38
-16
-38
-17
-10
-21
-29
-20
-38
-16
-37
-17
-10
-21
-33
-35
-10
-21
 CompUnit(1)
  CompUnit(1)
   FuncDef(1)
    VOID_Type(1)
     VOID
-   VOID
-  VOID_Type(1)
-   VOID
-  VOID
- FuncDef(1)
-  VOID_Type(1)
-   VOID
-  VOID
- VOID_Type(1)
-  VOID
- VOID
+   IDENT
+   LP
+   FuncFParams(1)
+    FuncFParam(1)
+     INT_Type(1)
+      INT
+     IDENT
+    FuncFParam_R
+   RP
+   Block(1)
+    LB
+    BlockItem_R
+    RB
+ FuncDef(5)
+  INT_Type(5)
+   INT
+  IDENT
+  LP
+  RP
+  Block(5)
+   LB
+   BlockItem_R(5)
+    BlockItem_R(5)
+     BlockItem_R(5)
+      BlockItem_R
+      BlockItem(6)
+       Decl(6)
+        VarDecl(6)
+         INT_Type(6)
+          INT
+         VarDef(6)
+          IDENT
+          VecDef_R
+          ASSIGN
+          InitVal(6)
+           Exp(6)
+            AddExp(6)
+             MulExp(6)
+              UnaryExp(6)
+               PrimaryExp(6)
+                NUMBER(6)
+                 DECIMAL_CONST
+         VarDef_R
+         SEMICOLON
+     BlockItem(7)
+      Stmt(7)
+       IF
+       LP
+       Cond(7)
+        LOrExp(7)
+         LAndExp(7)
+          EqExp(7)
+           RelExp(7)
+            RelExp(7)
+             AddExp(7)
+              MulExp(7)
+               UnaryExp(7)
+                PrimaryExp(7)
+                 LVal(7)
+                  IDENT
+                  Vec_R
+            BT
+            AddExp(7)
+             MulExp(7)
+              UnaryExp(7)
+               PrimaryExp(7)
+                NUMBER(7)
+                 DECIMAL_CONST
+       RP
+       Stmt(7)
+        Block(7)
+         LB
+         BlockItem_R(7)
+          BlockItem_R
+          BlockItem(8)
+           Stmt(8)
+            Exp(8)
+             AddExp(8)
+              MulExp(8)
+               UnaryExp(8)
+                IDENT
+                LP
+                FuncRParams(8)
+                 Exp(8)
+                  AddExp(8)
+                   MulExp(8)
+                    UnaryExp(8)
+                     PrimaryExp(8)
+                      LVal(8)
+                       IDENT
+                       Vec_R
+                 Exp_R
+                RP
+            SEMICOLON
+         RB
+       ELSE
+       Stmt(9)
+        Block(9)
+         LB
+         BlockItem_R(9)
+          BlockItem_R
+          BlockItem(10)
+           Stmt(10)
+            Exp(10)
+             AddExp(10)
+              MulExp(10)
+               UnaryExp(10)
+                IDENT
+                LP
+                FuncRParams(10)
+                 Exp(10)
+                  AddExp(10)
+                   MulExp(10)
+                    UnaryExp(10)
+                     PrimaryExp(10)
+                      NUMBER(10)
+                       DECIMAL_CONST
+                 Exp_R
+                RP
+            SEMICOLON
+         RB
+    BlockItem(12)
+     Stmt(12)
+      RETURN
+      Exp(12)
+       AddExp(12)
+        MulExp(12)
+         UnaryExp(12)
+          PrimaryExp(12)
+           NUMBER(12)
+            DECIMAL_CONST
+      SEMICOLON
+   RB

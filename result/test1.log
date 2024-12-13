@@ -1,27 +1,63 @@
-25
-38
-16
-17
-20
-25
-38
-9
-37
-10
-26
-38
-9
-34
-10
-33
-35
-10
-21
 CompUnit(1)
  FuncDef(1)
   INT_Type(1)
    INT
-  INT
- INT_Type(1)
-  INT
- INT
+  IDENT
+  LP
+  RP
+  Block(2)
+   LB
+   BlockItem_R(2)
+    BlockItem_R(2)
+     BlockItem_R(2)
+      BlockItem_R
+      BlockItem(3)
+       Decl(3)
+        VarDecl(3)
+         INT_Type(3)
+          INT
+         VarDef(3)
+          IDENT
+          VecDef_R
+          ASSIGN
+          InitVal(3)
+           Exp(3)
+            AddExp(3)
+             MulExp(3)
+              UnaryExp(3)
+               PrimaryExp(3)
+                NUMBER(3)
+                 DECIMAL_CONST
+         VarDef_R
+         SEMICOLON
+     BlockItem(4)
+      Decl(4)
+       VarDecl(4)
+        FLOAT_Type(4)
+         FLOAT
+        VarDef(4)
+         IDENT
+         VecDef_R
+         ASSIGN
+         InitVal(4)
+          Exp(4)
+           AddExp(4)
+            MulExp(4)
+             UnaryExp(4)
+              PrimaryExp(4)
+               NUMBER(4)
+                FLOAT
+        VarDef_R
+        SEMICOLON
+    BlockItem(5)
+     Stmt(5)
+      RETURN
+      Exp(5)
+       AddExp(5)
+        MulExp(5)
+         UnaryExp(5)
+          PrimaryExp(5)
+           NUMBER(5)
+            DECIMAL_CONST
+      SEMICOLON
+   RB
