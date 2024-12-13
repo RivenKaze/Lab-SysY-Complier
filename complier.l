@@ -1,4 +1,7 @@
 %{
+    #include <ctype.h>
+    #include <string.h>
+    #include "ASTnode.h"
     #include <stdio.h>
     #include "complier.tab.h"
 %}
@@ -17,39 +20,39 @@ IDENT [a-zA-Z_][a-zA-Z0-9_]*
 
 {WHITESPACE}    {}
 
-"!="                                {return NE;}
-">="                                {return BE;} 
-"<="                                {return LE;}
-","                                 {return COMMA;}
-"!"                                 {return NOT;}
-">"                                 {return BT;}
-"<"                                 {return LT;}
-"=="                                {return EQ;}
-"="                                 {return ASSIGN;}
-";"                                 {return SEMICOLON;}
-"+"                                 {return PLUS;}
-"-"                                 {return MINUS;}
-"*"                                 {return MULT;}
-"/"                                 {return DIV;}
-"%"                                 {return PERCENT;}
-"("                                 {return LP;}
-")"                                 {return RP;}
-"["                                 {return LS;}
-"]"                                 {return RS;}
-"{"                                 {return LB;}
-"}"                                 {return RB;}
-"||"                                {return OR;}
-"&&"                                {return AND;}
-"const"                             {return CONST;}
-"int"                               {return INT;}
-"float"                             {return FLOAT;} 
-"void"                              {return VOID;}
-"if"                                {return IF;}
-"else"                              {return ELSE;}
-"while"                             {return WHILE;}
-"continue"                          {return CONTINUE;}
-"break"                             {return BREAK;} 
-"return"                            {return RETURN;}
+"!="                                {yylval.node = createNodeString("NE","!=");return NE;}
+">="                                {yylval.node = createNodeString("BE",">=");return BE;} 
+"<="                                {yylval.node = createNodeString("LE","<=");return LE;}
+","                                 {yylval.node = createNodeOp("COMMA");return COMMA;}
+"!"                                 {yylval.node = createNodeOp("NOT");return NOT;}
+">"                                 {yylval.node = createNodeString("BT",">");return BT;}
+"<"                                 {yylval.node = createNodeString("LT","<");return LT;}
+"=="                                {yylval.node = createNodeString("EQ","==");return EQ;}
+"="                                 {yylval.node = createNodeOp("ASSIGN");return ASSIGN;}
+";"                                 {yylval.node = createNodeOp("SEMICOLON");return SEMICOLON;}
+"+"                                 {yylval.node = createNodeOp("PLUS");return PLUS;}
+"-"                                 {yylval.node = createNodeOp("MINUS");return MINUS;}
+"*"                                 {yylval.node = createNodeOp("MULT");return MULT;}
+"/"                                 {yylval.node = createNodeOp("DIV");return DIV;}
+"%"                                 {yylval.node = createNodeOp("PERCENT");return PERCENT;}
+"("                                 {yylval.node = createNodeOp("LP");return LP;}
+")"                                 {yylval.node = createNodeOp("RP");return RP;}
+"["                                 {yylval.node = createNodeOp("LS");return LS;}
+"]"                                 {yylval.node = createNodeOp("RS");return RS;}
+"{"                                 {yylval.node = createNodeOp("LB");return LB;}
+"}"                                 {yylval.node = createNodeOp("RB");return RB;}
+"||"                                {yylval.node = createNodeOp("OR");return OR;}
+"&&"                                {yylval.node = createNodeOp("AND");return AND;}
+"const"                             {yylval.node = createNodeOp("CONST");return CONST;}
+"int"                               {yylval.node = createNodeOp("INT");return INT;}
+"float"                             {yylval.node = createNodeOp("FLOAT");return FLOAT;} 
+"void"                              {yylval.node = createNodeOp("VOID");return VOID;}
+"if"                                {yylval.node = createNodeOp("IF");return IF;}
+"else"                              {yylval.node = createNodeOp("ELSE");return ELSE;}
+"while"                             {yylval.node = createNodeOp("WHILE");return WHILE;}
+"continue"                          {yylval.node = createNodeOp("CONTINUE");return CONTINUE;}
+"break"                             {yylval.node = createNodeOp("BREAK");return BREAK;} 
+"return"                            {yylval.node = createNodeOp("RETURN");return RETURN;}
 
 {OCTAL_CONST}                       {return INT_CONST;}
 {HEXADECIMAL_CONST}                 {return INT_CONST;}
